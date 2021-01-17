@@ -2,13 +2,18 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  cursor: none;
+}
+
+@media screen and (min-width: 480px) {
+  * {
+    cursor: none;
+  }
 }
 
 html {
-  background: linear-gradient(180deg, #0F0A30 0%, #310776 100%);
   font-size: calc(14px + 0.25vw);
-  min-height: 100vh;
+  background: linear-gradient(180deg, #0F0A30 0%, #310776 100%);
+  height: 100vh;
 }
 
 body {
@@ -50,6 +55,12 @@ section {
   padding: 10vh 7vw;
 }
 
+@media screen and (max-width: 480px) {
+  section {
+    padding: 6vh 7vw;
+  }
+}
+
 a {
   text-decoration: none;
   color: #F9FAFB;
@@ -89,19 +100,16 @@ li::before {
   margin: auto;
 }
 
-.introduction {
-  display: flex;
-}
-
 @media screen and (min-width: 480px) {
   .introduction {
+    display: flex;
     align-items: center;
   }
 }
 
 @media screen and (max-width: 480px) {
-  header {
-    order: 1;
+  .avatar {
+    margin-bottom: 3vh;
   }
 }
 
@@ -120,12 +128,6 @@ li::before {
   display: block;
   mix-blend-mode: luminosity;
   border: 2px solid white;
-}
-
-@media screen and (max-width: 480px) {
-  .avatar {
-    order: 2;
-  }
 }
 
 @media screen and (min-width: 480px) {
@@ -149,6 +151,12 @@ li::before {
   letter-spacing: 0.05vw;
   border-radius: 6px;
   border: 0;
+}
+
+@media screen and (max-width: 480px) {
+  .btn {
+    margin-top: 6vh;
+  }
 }
 
 .btn:hover {
