@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <met a name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+  <title>Joe Richardson</title>
+</head>
+
+<body>
+  <section>
+    <div class="introduction">
+      <div class="avatar">
+        <img src="image.png" alt="Joe Richardson">
+      </div>
+
+      <header>
+        <h1>Joe Richardson</h1>
+        <p>Engineering Manager based in London. Building stuff at <a target="_blank" href="//fueled.com/jr">Fueled</a>.</p>
+      </header>
+    </div>
+
+    <h2>Past Work</h2>
+    <ul>
+      <li><a target="_blank" href="//worksbymero.com">MERó</a></li>
+      <li><a target="_blank" href="//dope.githu.com/freddy">FreddyApp</a></li>
+      <li><a target="_blank" href="//wirecutter.com">Wirecutter</a></li>
+      <li><a target="_blank" href="//omstars.com">Omstars</a></li>
+      <li><a target="_blank" href="//stories.starbucks.com/productions/upstanders-season-1/">Starbucks</a></li>
+      <li><a target="_blank" href="//www.clarks.com/">Clarks Originals</a></li>
+      <li><a target="_blank" href="//education.lego.com/">LEGO</a></li>
+    </ul>
+
+    <a href="mailto:joe.rchdsn@gmail.com" class="btn">Get in touch</a>
+  </section>
+
+  <span id="cursor"></span>
+
+  <script>
+    const cursor = document.getElementById('cursor');
+    const supportsTouch = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+
+    if (!supportsTouch) {
+      document.addEventListener('mousemove', (e) => {
+        cursor.style.display = 'block'
+        cursor.style.top = `${e.pageY}px`
+        cursor.style.left = `${e.pageX}px`
+      })
+
+      document.addEventListener('mousedown', () => {
+        cursor.style.backgroundColor = '#FEAB30'
+        cursor.style.transform = 'translate(-50%, -50%) scale(0.9)'
+      })
+
+      document.addEventListener('mouseup', () => {
+        cursor.style.backgroundColor = ' rgba(254, 171, 48, 0.6)'
+        cursor.style.transform = 'translate(-50%, -50%) scale(1)'
+      })
+    }
+  </script>
+</body>
+</html>
