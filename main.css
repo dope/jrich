@@ -36,8 +36,8 @@ canvas {
 
 @media screen and (max-width: 480px) {
   canvas {
-    right: -15%;
-    opacity: 0.8;
+    right: -25%;
+    opacity: 0.6;
   }
 }
 
