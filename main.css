@@ -12,8 +12,33 @@
 
 html {
   font-size: calc(14px + 0.25vw);
-  background: linear-gradient(180deg, #0F0A30 0%, #310776 100%);
   min-height: 100vh;
+}
+
+.background {
+  background: linear-gradient(180deg, #0F0A30 0%, #310776 100%);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: -99999;
+}
+
+canvas {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  width: 100%;
+  height: 100%;
+  outline: none;
+}
+
+@media screen and (max-width: 480px) {
+  canvas {
+    right: -15%;
+    opacity: 0.8;
+  }
 }
 
 body {
@@ -71,10 +96,17 @@ a:hover {
   color: #59DCC1;
 }
 
+ul, h2, .btn {
+  position: relative;
+  z-index: 100;
+  display: table;
+}
+
 ul {
   list-style: none;
   margin-top: 1vh;
   line-height: 2;
+  position: relative;
 }
 
 li {
@@ -98,6 +130,11 @@ li::before {
   bottom: 0;
   left: 0px;
   margin: auto;
+}
+
+.introduction {
+  position: relative;
+  z-index: 100;
 }
 
 @media screen and (min-width: 480px) {
@@ -174,6 +211,7 @@ li::before {
   border: 2px solid #FEAB30;
   transform: translate(-50%, -50%);
   pointer-events: none;
+  z-index: 10000;
   transition: background-color 250ms ease-in-out,
               transform 250ms ease-in-out;
 }
