@@ -15,6 +15,16 @@ html {
   min-height: 100vh;
 }
 
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 .background {
   background: linear-gradient(180deg, #0F0A30 0%, #310776 100%);
   width: 100vw;
@@ -78,6 +88,8 @@ p > a {
 section {
   position: relative;
   padding: 10vh 7vw;
+  opacity: 0;
+  animation: fade 200ms linear 400ms forwards;
 }
 
 @media screen and (max-width: 480px) {
@@ -214,4 +226,18 @@ li::before {
   z-index: 10000;
   transition: background-color 250ms ease-in-out,
               transform 250ms ease-in-out;
+}
+
+.social {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 6vh;
+  width: 30px;
+  margin-right: 15px;
+  position: relative;
+  z-index: 100;
+}
+
+.social path {
+  fill: #FFF;
 }
