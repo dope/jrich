@@ -15,16 +15,6 @@ html {
   min-height: 100vh;
 }
 
-@keyframes fade {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
 .background {
   background: linear-gradient(180deg, #0F0A30 0%, #310776 100%);
   width: 100vw;
@@ -88,8 +78,6 @@ p > a {
 section {
   position: relative;
   padding: 10vh 7vw;
-  opacity: 0;
-  animation: fade 200ms linear 400ms forwards;
 }
 
 @media screen and (max-width: 480px) {
@@ -240,4 +228,8 @@ li::before {
 
 .social path {
   fill: #FFF;
+}
+
+.social:hover path {
+  fill: #59DCC1;
 }
