@@ -107,6 +107,8 @@ h2, ul {
 .avatar {
   min-width: 80px;
   min-height: 80px;
+  max-width: 80px;
+  max-height: 80px;
   border-radius: 100%;
   display: block;
   background-color: #310776;
