@@ -172,6 +172,10 @@ li::before {
   h1 {
     margin-top: 20px;
   }
+
+  .balls {
+    opacity: 0.6;
+  }
 }
 
 .balls {
