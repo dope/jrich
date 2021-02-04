@@ -190,4 +190,8 @@ li::before {
     width: calc(450px + 0.1vw);
     height: 100%;
   }
+
+  .social {
+    margin-top: 50px;
+  }
 }
