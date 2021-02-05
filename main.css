@@ -19,6 +19,12 @@ body {
   min-height: 100vh;
 }
 
+html,
+body {
+  position: fixed;
+  overflow: hidden;
+}
+
 h1, h2 {
   color: #F9FAFB;
   text-transform: uppercase;
@@ -37,11 +43,11 @@ h2 {
   margin-bottom: 2vh;
 }
 
-@media screen and (max-width: 480px) {
-  h2 {
-    margin-top: 6vh;
-    margin-bottom: 2vh;
-  }
+main {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 p {
@@ -55,11 +61,11 @@ p > a {
 }
 
 section {
-  position: relative;
-  z-index: 100;
   padding: 10vh 7vw;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
+  position: relative;
+  z-index: 10;
 }
 
 a {
@@ -102,26 +108,75 @@ li::before {
   margin: auto;
 }
 
-.introduction {
+header {
   display: flex;
   align-items: center;
-  max-width: 700px;
+  width: 100%;
 }
 
 .avatar {
-  min-width: 60px;
-  min-height: 60px;
-  max-width: 60px;
-  max-height: 60px;
+  min-width: 100px;
+  min-height: 100px;
+  max-width: 100px;
+  max-height: 100px;
   border-radius: 100%;
   display: block;
-  background-color: #310776;
-  background-image: url('image.jpg');
+  background-image: url('avatar.jpg');
   background-size: cover;
-  background-blend-mode: exclusion;
-  border: 3px solid #F9FAFB;
-  margin-right: 30px;
-  margin-bottom: 4vh;
+  position: relative;
+  margin-right: 50px;
+}
+
+.avatar::before {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 134 134'%3E%3Cdefs/%3E%3Cpath stroke='url(%23paint0_linear)' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M67.2 125.6c0 .6-.3 1.4-.2 2 .1.6.5 1.3.6 2 .2.7.2 1.5.6 2.2M2 66.7c.6 0 1.3.2 2 .1.6-.1 1.2-.5 2-.6.7-.1 1.5-.2 2.1-.6M4.5 83h2c.6-.2 1.2-.7 1.9-.8.7-.2 1.5-.3 2.1-.8m.3 18c.6 0 1.3 0 1.9-.2.6-.2 1.2-.7 1.8-1 .7-.2 1.5-.4 2.1-.9m1.6 13.7c.6-.2 1.4-.1 2-.4.5-.3 1-.8 1.7-1.1.7-.3 1.5-.6 2-1.2m5.6 13.2l1.8-.7 1.6-1.4c.6-.4 1.3-.8 1.7-1.5m8.5 9.8c.5-.4 1.2-.6 1.6-1l1.3-1.7c.6-.5 1.2-1 1.5-1.7m7.7 8.8c.3-.5 1-1 1.1-1.6.2-.6.2-1.4.5-2 .2-.7.6-1.5.6-2.2M132 66.7c-.6 0-1.3.2-2 .1-.6-.1-1.2-.5-2-.6-.7-.1-1.5-.2-2.1-.6m3.6 17.3h-2c-.6-.2-1.2-.7-1.9-.8-.7-.2-1.5-.3-2.1-.8m-.3 18c-.6 0-1.3 0-1.9-.2-.6-.2-1.2-.7-1.8-1-.7-.2-1.5-.4-2.1-.9m-1.6 13.7c-.6-.2-1.4-.1-2-.4-.5-.3-1-.8-1.7-1.1-.7-.3-1.5-.6-2-1.2m-5.6 13.2l-1.8-.7-1.6-1.4c-.6-.4-1.3-.8-1.7-1.5m-8.5 9.8c-.5-.4-1.2-.6-1.6-1l-1.3-1.7c-.6-.5-1.2-1-1.5-1.7m-7.7 8.8c-.3-.5-1-1-1.1-1.6-.2-.6-.2-1.4-.5-2-.2-.7-.6-1.5-.6-2.2M66.8 8.4c0-.6.3-1.4.2-2-.1-.6-.5-1.3-.6-2-.2-.7-.2-1.5-.6-2.2m63.7 49c-.6 0-1.3-.2-2 0-.6.1-1.2.6-1.9.7-.7.2-1.5.3-2.1.8m-.3-18c-.6 0-1.3 0-1.9.2-.6.2-1.2.7-1.8 1-.7.2-1.5.4-2.1.9m-1.6-13.7c-.6.2-1.4.1-2 .4-.5.3-1 .8-1.7 1.1-.7.3-1.5.6-2 1.2m-5.6-13.2l-1.8.7-1.6 1.4c-.6.4-1.3.8-1.7 1.5m-8.5-9.8c-.5.4-1.2.6-1.6 1L88 9.1c-.6.5-1.2 1-1.5 1.7M78.8 2c-.3.5-1 1-1.1 1.6-.2.6-.2 1.4-.5 2-.2.7-.6 1.5-.6 2.2M4.5 51.1h2c.6.2 1.2.7 1.9.8.7.2 1.5.3 2.1.8m.3-18c.6 0 1.3 0 1.9.2.6.2 1.2.7 1.8 1 .7.2 1.5.4 2.1.9m1.6-13.7c.6.2 1.4.1 2 .4.5.3 1 .8 1.7 1.1.7.3 1.5.6 2 1.2m5.6-13.2l1.8.7 1.6 1.4c.6.4 1.3.8 1.7 1.5m8.5-9.8c.5.4 1.2.6 1.6 1L46 9.1c.6.5 1.2 1 1.5 1.7M55.2 2c.3.5 1 1 1.1 1.6.2.6.2 1.4.5 2 .2.7.6 1.5.6 2.2'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='20.4' x2='105.5' y1='11.1' y2='120.8' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2359DCC1'/%3E%3Cstop offset='1' stop-color='%23FEAB30'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
+  z-index: -99999;
+  left: -15px;
+  animation: rotate 50000ms linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.wave {
+  position: fixed;
+}
+
+.wave--1 {
+  display: block;
+  top: 0;
+  left: 0;
+  width: 30vw;
+  height: 50%;
+  background-image: url("data:image/svg+xml,%3Csvg width='530' height='657' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M530 0H0v657c10.7 0 55-13.4 145.8-67 113.7-66.9 60.4-293.2 89-388.6C257.8 125 441.2 33 530 0z' fill='%23FEAB30'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.wave--2 {
+  display: block;
+  right: 0;
+  bottom: 0;
+  width: 50vw;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='691' height='777' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.7 776H0h5.6c75-.4 215.7-20.6 219.7-99.4 5.2-101-35-172.2 108.2-261.1 143.3-89 167.8-96 169.5-186.5 1.7-90.4 105-229.8 187-228v775H5.7z' fill='%2359DCC1'/%3E%3C/svg%3E");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .social {
@@ -146,35 +201,22 @@ li::before {
   fill: #60d394;
 }
 
-.wave {
-  position: fixed;
-}
-
-.wave--1 {
-  display: block;
-  top: 0;
-  left: 0;
-  width: calc(350px + 0.1vw);
-  height: 50%;
-  background-image: url("data:image/svg+xml,%3Csvg width='530' height='657' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M530 0H0v657c10.7 0 55-13.4 145.8-67 113.7-66.9 60.4-293.2 89-388.6C257.8 125 441.2 33 530 0z' fill='%23FEAB30'/%3E%3C/svg%3E");
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-.wave--2 {
-  display: block;
-  right: 0;
-  bottom: 0;
-  width: calc(700px + 0.1vw);
-  height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg width='691' height='777' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.7 776H0h5.6c75-.4 215.7-20.6 219.7-99.4 5.2-101-35-172.2 108.2-261.1 143.3-89 167.8-96 169.5-186.5 1.7-90.4 105-229.8 187-228v775H5.7z' fill='%2359DCC1'/%3E%3C/svg%3E");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
 @media screen and (max-width: 700px) {
+  section {
+    padding-top: 6vh;
+    padding-bottom: 4vh;
+  }
+
   p {
-    max-width: none;
+    font-size: 18px;
+  }
+
+  h2 {
+    margin-top: 90px;
+  }
+
+  .social {
+    margin-top: 40px;
   }
 
   .wave {
@@ -191,7 +233,20 @@ li::before {
     height: 100%;
   }
 
-  .social {
-    margin-top: 0px;
+  p {
+    max-width: none;
+  }
+
+  .avatar {
+    margin-right: 40px;
+    min-width: 60px;
+    min-height: 60px;
+    max-width: 60px;
+    max-height: 60px;
+  }
+
+  .avatar::before {
+    width: 90px;
+    height: 90px;
   }
 }
