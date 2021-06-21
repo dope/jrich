@@ -7,13 +7,13 @@
 html {
   font-size: calc(14px + 0.25vw);
   min-height: 100vh;
-  background-image: linear-gradient(90deg, #0F0A30, #310776 100%);
+  background-image: linear-gradient(90deg, #0f0a30, #310776 100%);
   background-attachment: fixed;
 }
 
 body {
   font-family: "Space Grotesk";
-  color: #F9FAFB;
+  color: #f9fafb;
 }
 
 html,
@@ -22,8 +22,9 @@ body {
   overflow: hidden;
 }
 
-h1, h2 {
-  color: #F9FAFB;
+h1,
+h2 {
+  color: #f9fafb;
   text-transform: uppercase;
   font-size: calc(12px + 0.25vw);
   letter-spacing: 0.1vw;
@@ -31,7 +32,7 @@ h1, h2 {
 }
 
 h1 {
-  color: #FEAB30;
+  color: #feab30;
   margin-bottom: 5px;
 }
 
@@ -59,7 +60,7 @@ p > a {
 }
 
 p > a:hover {
-  color: #59DCC1;
+  color: #59dcc1;
 }
 
 header {
@@ -70,7 +71,7 @@ header {
 }
 
 header a {
-  border-bottom: 2px solid #F9FAFB;
+  border-bottom: 2px solid #f9fafb;
 }
 
 section {
@@ -88,7 +89,7 @@ section {
   max-height: 100px;
   border-radius: 100%;
   display: block;
-  background-image: url('avatar.jpg');
+  background-image: url("avatar.jpg");
   background-size: cover;
   position: relative;
   margin-right: 50px;
@@ -108,10 +109,6 @@ section {
   z-index: -99999;
   left: -15px;
   animation: rotate 50000ms linear infinite;
-}
-
-.avatar:hover::before {
-  animation: rotate 500ms linear infinite;
 }
 
 .wave {
@@ -166,7 +163,7 @@ li a {
 }
 
 li a span:last-of-type {
-  color: #FEAB30;
+  color: #feab30;
   font-size: 15px;
 }
 
@@ -175,7 +172,7 @@ li a:hover {
 }
 
 a {
-  color: #F9FAFB;
+  color: #f9fafb;
   text-decoration: none;
 }
 
